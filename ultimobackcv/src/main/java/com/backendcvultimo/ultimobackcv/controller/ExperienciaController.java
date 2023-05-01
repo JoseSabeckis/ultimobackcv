@@ -20,7 +20,7 @@ import com.backendcvultimo.ultimobackcv.interfaz.IExperienciaService;
 import com.backendcvultimo.ultimobackcv.response.Mensaje;
 
 @RestController
-@CrossOrigin(origins = "*/ultimobackcv-production.up.railway.app", maxAge = 4200)
+@CrossOrigin(origins = "https://curriculumwebfloresjose.web.app/ultimobackcv-production.up.railway.app", maxAge = 4200)
 @RequestMapping("/api/test/experiencia/")
 public class ExperienciaController {
 
