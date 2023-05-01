@@ -21,7 +21,6 @@ public class persona {
     private String apellido;
 	@Size(min = 1, max = 50, message = "no cumple la longitud")
 	private String titulo;
-	@Size(min = 1, max = 50, message = "no cumple la longitud")
     private String img;
 	
 	public persona(Long id, @NotNull @Size(min = 1, max = 50, message = "no cumple la longitud") String nombre,
