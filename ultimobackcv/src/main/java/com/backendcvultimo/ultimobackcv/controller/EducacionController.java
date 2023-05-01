@@ -22,7 +22,7 @@ import com.backendcvultimo.ultimobackcv.response.Mensaje;
 //import com.backendcvultimo.ultimobackcv.service.EducationService;----
 
 @RestController
-@CrossOrigin(origins = "https://curriculumwebfloresjose.web.app/*", maxAge = 4200)
+@CrossOrigin(origins = "*", maxAge = 4200)
 @RequestMapping("/api/test/educacion/")
 public class EducacionController {
 	

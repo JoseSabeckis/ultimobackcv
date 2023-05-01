@@ -21,7 +21,7 @@ import com.backendcvultimo.ultimobackcv.interfaz.IPersonaService;
 import com.backendcvultimo.ultimobackcv.response.Mensaje;
 
 @RestController
-@CrossOrigin(origins = "https://curriculumwebfloresjose.web.app/*", maxAge = 4200)
+@CrossOrigin(origins = "*", maxAge = 4200)
 @RequestMapping("/api/test/personas/")
 public class PersonaController {
 

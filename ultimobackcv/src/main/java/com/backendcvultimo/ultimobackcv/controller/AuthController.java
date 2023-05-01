@@ -32,7 +32,7 @@ import com.backendcvultimo.ultimobackcv.response.Mensaje;
 import com.backendcvultimo.ultimobackcv.security.jwt.JwtUtils;
 import com.backendcvultimo.ultimobackcv.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "https://curriculumwebfloresjose.web.app/*", maxAge = 4200)//3600
+@CrossOrigin(origins = "*", maxAge = 4200)//3600
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
