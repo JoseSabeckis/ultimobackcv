@@ -21,7 +21,7 @@ import com.backendcvultimo.ultimobackcv.interfaz.IAcercaService;
 import com.backendcvultimo.ultimobackcv.response.Mensaje;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 4200)
+@CrossOrigin(origins = "*/ultimobackcv-production.up.railway.app", maxAge = 4200)
 @RequestMapping("/api/test/acerca/")
 public class AcercaController {
 
