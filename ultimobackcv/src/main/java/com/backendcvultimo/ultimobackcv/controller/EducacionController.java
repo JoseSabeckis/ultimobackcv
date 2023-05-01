@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +36,7 @@ public class EducacionController {
 		return new ResponseEntity<List<educacion>>(list, HttpStatus.OK);
 	}
 
-	//@Secured(value = { "ROLE_ADMIN" })
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("crear")
 	public ResponseEntity<?> crearEducacion(@RequestBody educacion edu) {
 		
@@ -53,7 +54,7 @@ public class EducacionController {
 		return new ResponseEntity<>(new Mensaje("Creada Educacion"), HttpStatus.OK);
 	}
 
-	//@Secured({ "ROLE_USER" })
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("eliminar/{id}")
 	public ResponseEntity<?> eliminarEducacion(@PathVariable("id") Long id) {
 		/*
@@ -65,7 +66,7 @@ public class EducacionController {
 		return new ResponseEntity<>(new Mensaje("Educacion Eliminada"), HttpStatus.OK);
 	}
 
-	//@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("modificar/{id}")
 	public ResponseEntity<?> modificarEducacion(@PathVariable("id") Long id, @RequestBody educacion edu) {
 		/*

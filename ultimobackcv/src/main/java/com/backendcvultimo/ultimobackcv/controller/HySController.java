@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +34,7 @@ public class HySController {
 		return new ResponseEntity<List<hys>>(list, HttpStatus.OK);
 	}
 	
-	//@Secured(value = { "ROLE_ADMIN" })
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("crear")
 	public ResponseEntity<?> crearHys(@RequestBody hys hys) {
 		
@@ -42,6 +43,7 @@ public class HySController {
 		return new ResponseEntity<>(new Mensaje("Creada Hys"), HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("eliminar/{id}")
 	public ResponseEntity<?> eliminarHys(@PathVariable("id") Long id) {
 		
@@ -50,6 +52,7 @@ public class HySController {
 		return new ResponseEntity<>(new Mensaje("Hys Eliminada"), HttpStatus.OK);
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("modificar/{id}")
 	public ResponseEntity<?> modificarHys(@PathVariable("id") Long id, @RequestBody hys hys) {
 		

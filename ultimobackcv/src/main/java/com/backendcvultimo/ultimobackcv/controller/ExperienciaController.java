@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +34,7 @@ public class ExperienciaController {
 		return new ResponseEntity<List<experiencia>>(list, HttpStatus.OK);
 	}
 
-	//@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("crear")
 	public ResponseEntity<?> crearExperiencia(@RequestBody experiencia exp) {
 		/*
@@ -50,7 +51,7 @@ public class ExperienciaController {
 		return new ResponseEntity<>(new Mensaje("Creada Experiencia"), HttpStatus.OK);
 	}
 
-	//@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("eliminar/{id}")
 	public ResponseEntity<?> eliminarExperiencia(@PathVariable("id") Long id) {
 		_Servicio.eliminarExperiencia(id);
@@ -58,7 +59,7 @@ public class ExperienciaController {
 		return new ResponseEntity<>(new Mensaje("Experiencia Eliminado"), HttpStatus.OK);
 	}
 
-	//@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("modificar/{id}")
 	public ResponseEntity<?> modificarExperiencia(@PathVariable("id") Long id, @RequestBody experiencia exp) {
 		/*

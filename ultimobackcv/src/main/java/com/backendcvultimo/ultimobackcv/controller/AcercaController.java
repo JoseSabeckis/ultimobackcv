@@ -37,7 +37,7 @@ public class AcercaController {
 
 	}
 
-	//@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("crear")
 	public ResponseEntity<?> crearAcerca(@RequestBody acerca acer) {
 		_Servicio.saveAcerca(acer);
@@ -51,7 +51,7 @@ public class AcercaController {
 		return new ResponseEntity<>(new Mensaje("Eliminado"), HttpStatus.OK);
 	}
 
-	//@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("modificar/{id}")
 	public ResponseEntity<?> modificarAcerca(@PathVariable("id") Long id, @RequestBody acerca acer) {
 
