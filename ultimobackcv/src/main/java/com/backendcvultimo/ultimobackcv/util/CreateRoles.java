@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.backendcvultimo.ultimobackcv.models.ERole;
+import com.backendcvultimo.ultimobackcv.models.Role;
 //import com.backendcvultimo.ultimobackcv.models.Role;
 import com.backendcvultimo.ultimobackcv.security.services.RolService;
 
@@ -12,7 +14,7 @@ public class CreateRoles implements CommandLineRunner {
 
 	@Autowired
 	RolService rolService;
-/*
+
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
@@ -25,13 +27,6 @@ public class CreateRoles implements CommandLineRunner {
 		rolService.save(rolUser);
 		rolService.save(rolModerator);
 
-	}
-*/
-
-	@Override
-	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		
 	}
 
 

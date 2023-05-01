@@ -21,7 +21,7 @@ import com.backendcvultimo.ultimobackcv.interfaz.IAcercaService;
 import com.backendcvultimo.ultimobackcv.response.Mensaje;
 
 @RestController
-@CrossOrigin(origins = "https://curriculumwebfloresjose.web.app/*", maxAge = 4200)
+@CrossOrigin(origins = "https://curriculumwebfloresjose.web.app", maxAge = 4200)
 @RequestMapping("/api/test/acerca/")
 public class AcercaController {
 
